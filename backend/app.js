@@ -6,6 +6,7 @@ const app=express();
 import  connectDB from './config/connectDB.js'
 const port=process.env.PORT
 import userRoutes from './routes/userRoutes.js'
+import products_routes from './routes/productRoutes.js'
 // cors  policy 
 app.use( cors());
 
@@ -15,6 +16,9 @@ app.use(express.json());
 
 //load Routes
 app.use("/api/user",userRoutes)
+//products Routes
+
+app.use("/api/products",products_routes)
 
 const start = async () => {
 
